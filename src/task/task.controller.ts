@@ -5,7 +5,6 @@ import { TaskDTO } from './task.dto';
 export class TaskController {
   @Post()
   createTask(@Body() task: TaskDTO) {
-    console.log(task);
     return task;
   }
 }
