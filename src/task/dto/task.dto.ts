@@ -5,3 +5,8 @@ export class TaskDTO {
   status: string;
   expirationDate: Date;
 }
+
+export interface FindAllParamsDTO {
+  title: string;
+  status: string;
+}

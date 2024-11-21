@@ -1,5 +1,5 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { TaskDTO } from './task.dto';
+import { Injectable, NotFoundException, Query } from '@nestjs/common';
+import { FindAllParamsDTO, TaskDTO } from './dto/task.dto';
 
 @Injectable()
 export class TaskService {
@@ -8,8 +8,20 @@ export class TaskService {
     this.tasks.push(task);
     return task;
   }
-  getAllTasks(): TaskDTO[] {
-    return this.tasks;
+  getAllTasks(params: FindAllParamsDTO): TaskDTO[] {
+    return this.tasks.filter((task) => {
+      let march: boolean = true;
+      if (
+        params.title &&
+        !task.title.toLowerCase().includes(params.title.toLowerCase())
+      ) {
+        march = false;
+      }
+      if (params.status && !task.status.includes(params.status)) {
+        march = false;
+      }
+      return march;
+    });
   }
   getTaskById(id: string): TaskDTO | undefined {
     const task = this.tasks.find((task) => task.id === id);
@@ -23,6 +35,7 @@ export class TaskService {
     const index = this.tasks.findIndex((t) => t.id === id);
 
     if (index !== -1) {
+      this.tasks[index].id = id;
       this.tasks[index] = task;
       return task;
     }
