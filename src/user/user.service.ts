@@ -1,23 +1,21 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
+import { UserDto } from './dto/user.dto';
+import { v4 as uuidV4 } from 'uuid';
+import { hashSync as bcryptHashSync } from 'bcrypt';
 
 @Injectable()
 export class UserService {
-  private users: CreateUserDto[] = [
+  private users: UserDto[] = [
     {
-      id: '1',
-      username: 'john',
-      password: '123456',
-      email: 'john@example.com',
-    },
-    {
-      id: '2',
-      username: 'jane',
-      password: '654321',
-      email: 'jane@example.com',
+      id: 'ae63c6f6-c954-4a41-a4bb-fd7d1111c2e1',
+      username: 'John Doe',
+      password: '$2b$10$Pvx1L0T/cRdqrUxQcWPRbucjB.Bc9ecL5t0aNh8RlQ7XFWXyag0VG',
+      email: 'john.doe@example.com',
     },
   ];
-  create(user: CreateUserDto) {
+  create(user: UserDto) {
+    user.id = uuidV4();
+    user.password = bcryptHashSync(user.password, 10);
     return this.users.push(user);
   }
 
@@ -33,7 +31,7 @@ export class UserService {
     throw new NotFoundException(`User with id: ${id} not found.`);
   }
 
-  update(id: string, user: CreateUserDto) {
+  update(id: string, user: UserDto) {
     const index = this.users.findIndex((t) => t.id === id);
 
     if (index !== -1) {
