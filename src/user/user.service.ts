@@ -5,14 +5,7 @@ import { hashSync as bcryptHashSync } from 'bcrypt';
 
 @Injectable()
 export class UserService {
-  private users: UserDto[] = [
-    {
-      id: 'ae63c6f6-c954-4a41-a4bb-fd7d1111c2e1',
-      username: 'John Doe',
-      password: '$2b$10$Pvx1L0T/cRdqrUxQcWPRbucjB.Bc9ecL5t0aNh8RlQ7XFWXyag0VG',
-      email: 'john.doe@example.com',
-    },
-  ];
+  private users: UserDto[] = [];
   create(user: UserDto) {
     user.id = uuidV4();
     user.password = bcryptHashSync(user.password, 10);
@@ -50,5 +43,9 @@ export class UserService {
       return true;
     }
     throw new NotFoundException(`User with id: ${id} not found.`);
+  }
+
+  findByEmail(email: string) {
+    return this.users.find((user) => user.email === email);
   }
 }
