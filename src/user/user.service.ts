@@ -18,7 +18,6 @@ export class UserService {
     },
   ];
   create(user: CreateUserDto) {
-    return user;
     return this.users.push(user);
   }
 
