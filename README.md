@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Projeto criado para meu portfólio e para o curso gratuito de Nest JS no meu [canal do Youtube](https://www.youtube.com/@BrenoVeras-dev). Nele iremos abordar os seguintes recursos:
+Projeto criado com nest para meu portfólio . Nele iremos abordar os seguintes recursos:
 
 - CRUD de tarefas (Controllers, Decorators, Services, Modules)
 - Validação de DTO com class-validator
@@ -10,6 +10,8 @@ Projeto criado para meu portfólio e para o curso gratuito de Nest JS no meu [ca
 - Autenticação (JwtService, App guard)
 - Password hash
 - Banco de dados - TODO
+- APP GURD
+- Type-ORM 
 
 ## Instalação
 
@@ -21,9 +23,9 @@ Esse projeto foi desenvolvido utilizando a seguinte versão do node:
 
 ### Passos de Instalação
 
-1. Clone o repositório: `git clone git@github.com:deyvissonbrenoveras/task-management-api.git`
+1. Clone o repositório: `git clone https://github.com/Adao-Angelo/task-management-api.git`
 2. Navegue até o diretório do projeto: `cd task-management-api`
-3. Instale as dependências: `npm install`
+3. Instale as dependências: `pnpm install`
 
 
 ## Configuração
