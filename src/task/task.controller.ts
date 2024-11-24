@@ -9,7 +9,7 @@ import {
   Query,
   UseGuards,
 } from '@nestjs/common';
-import { FindAllParamsDTO, TaskDTO } from './dto/task.dto';
+import { CreateTaskDTO, FindAllParamsDTO, TaskDTO } from './dto/task.dto';
 import { TaskService } from './task.service';
 import { AuthGuard } from 'src/auth/auth.guard';
 
@@ -18,7 +18,7 @@ import { AuthGuard } from 'src/auth/auth.guard';
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
   @Post()
-  createTask(@Body() task: TaskDTO) {
+  createTask(@Body() task: CreateTaskDTO) {
     return this.taskService.createTask(task);
   }
 
