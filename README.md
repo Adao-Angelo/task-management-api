@@ -1,140 +1,165 @@
-# Task Management API
 
-## Introdução
+# **Task Management API**
 
-Projeto criado com nest para meu portfólio . Nele iremos abordar os seguintes recursos:
+🚀 A NestJS-based API developed for my portfolio, showcasing a task management system with essential features and modern practices.
 
-- CRUD de tarefas (Controllers, Decorators, Services, Modules)
-- Validação de DTO com class-validator
-- Variáveis de ambiente com ConfigService
-- Autenticação (JwtService, App guard)
-- Password hash
-- Banco de dados - TODO
-- APP GURD
-- Type-ORM 
+---
 
-## Instalação
+## **Overview**
 
-### Pré-requisitos
+This project demonstrates the following functionalities:
+- 📝 CRUD for tasks (Controllers, Decorators, Services, Modules)
+- ✅ DTO Validation with `class-validator`
+- 🔧 Environment Variables with `ConfigService`
+- 🔒 Authentication (JWT Service, App Guard)
+- 🔑 Password Hashing
+- 📦 Database Integration
+- ⚙️ TypeORM Integration
+- 🛡️ Global Guards (App Guard)
 
-Esse projeto foi desenvolvido utilizando a seguinte versão do node:
+---
 
-[Node v18.12.0 LTS](https://nodejs.org/en/blog/release/v18.12.0)
+## **Technologies Used**
 
-### Passos de Instalação
+| Technology         | Description                                          | Icon |
+|--------------------|------------------------------------------------------|------|
+| **NestJS**         | Framework for building efficient, reliable, and scalable server-side applications. | ![NestJS](https://nestjs.com/img/logo_text.svg) |
+| **TypeScript**     | Typed superset of JavaScript that compiles to plain JavaScript. | ![TypeScript](https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.svg) |
+| **TypeORM**        | ORM for TypeScript and JavaScript (ES7, ES6, ES5).  | ![TypeORM](https://typeorm.io/img/logo.svg) |
+| **Docker**         | Containerization platform for seamless deployment.   | ![Docker](https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png) |
+| **JWT**            | Standard for creating access tokens.                 | 🔐 |
+| **PostgreSQL**     | Robust and scalable relational database.             | ![PostgreSQL](https://www.postgresql.org/media/img/about/press/elephant.png) |
 
-1. Clone o repositório: `git clone https://github.com/Adao-Angelo/task-management-api.git`
-2. Navegue até o diretório do projeto: `cd task-management-api`
-3. Instale as dependências: `pnpm install`
+---
 
+## **Installation**
 
-## Configuração
+### **Pre-requisites**
+Ensure you have the following installed on your system:
+- [Node.js v18.12.0 LTS](https://nodejs.org/en/blog/release/v18.12.0)
+- [Docker](https://www.docker.com/)
 
-- Crie copie o arquivo .env.example e renomeie para .env, preenchendo todas a variáveis.
-- Inicialize o container do banco de dados com: 
-```
-  docker-compose up -d
-```
-- Execute as migrations com:
-```
-npm run migration:run
-```  
+### **Steps to Install**
 
-## Migrations
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Adao-Angelo/task-management-api.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd task-management-api
+   ```
+3. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-Criar uma migration:
-```
-npm run migration:create -name=nome-da-migration
-```
+---
 
-Executar as migrations:
-```
-  npm run migration:run
-```
+## **Configuration**
 
-Reverter as migrations:
-```
-  npm run migration:revert
-```  
+1. Copy the `.env.example` file and rename it to `.env`. Populate all required variables.
+2. Start the database container using Docker:
+   ```bash
+   docker-compose up -d
+   ```
+3. Run migrations to set up the database schema:
+   ```bash
+   npm run migration:run
+   ```
 
+---
 
-## Uso
+## **Database Migrations**
 
-O task-management-api expõe um endpoint para cadastro, atualização, busca e exclusão de tarefas. também foi desenvolvido um endpoint para criação de usuários e um endpoint de autenticação, onde é possível realizar o login passando um usuário e senha.
+- **Create a migration:**
+   ```bash
+   npm run migration:create -name=your-migration-name
+   ```
 
-### Curls
+- **Run migrations:**
+   ```bash
+   npm run migration:run
+   ```
 
-Copie os Curls abaixo e cole no seu testador de apis favorito, como [Insomnia](https://insomnia.rest/download) ou [Postman](https://www.postman.com/).
+- **Revert migrations:**
+   ```bash
+   npm run migration:revert
+   ```
 
-#### Usuários
-```
-curl --request POST \
-  --url http://localhost:3000/users \
-  --header 'Content-Type: application/json' \
-  --data ' {
-	 "username": "username",
-	 "password": "password"
- }'
-```
+---
 
-#### Autenticação
-```
-curl --request POST \
-  --url http://localhost:3000/auth/login \
-  --header 'Content-Type: application/json' \
-  --data ' {
-	 "username": "username",
-	 "password": "password"
- }'
-```
+## **Usage**
 
-#### Tarefas
+The API provides endpoints for managing tasks and users, including authentication and task CRUD operations.
 
-##### Criar
-```
-curl --request POST \
-  --url http://localhost:3000/task \
-  --header 'Authorization: Bearer token' \
-  --header 'Content-Type: application/json' \
-  --data ' {
-    "title":"title",
-    "description": "description",
-    "expirationDate": "2024-01-01"
- }'
-```
+### **Sample CURL Commands**
 
-##### Atualizar
-```
-curl --request PUT \
-  --url http://localhost:3000/task \
-  --header 'Authorization: Bearer token' \
-  --header 'Content-Type: application/json' \
-  --data ' {
-	 "id": "uuid here",
-    "title":"updated title",
-    "description": "updated description",
-    "status": "IN_PROGRESS",
-    "expirationDate": "2024-01-04"
- }'
- ```
-
-##### Encontrar por id
-```
-curl --request GET \
-  --url http://localhost:3000/task/1 \
-  --header 'Authorization: Bearer token'
- ```
-
-##### Buscar com filtros
-```
- curl --request GET \
-  --url 'http://localhost:3000/task?title=task%203&status=IN_PROGRESS' \
-  --header 'Authorization: Bearer token'
+#### **Users**
+Create a user:
+```bash
+curl --request POST   --url http://localhost:3000/users   --header 'Content-Type: application/json'   --data '{
+    "username": "username",
+    "password": "password"
+  }'
 ```
 
-##### Excluir
+#### **Authentication**
+Authenticate a user:
+```bash
+curl --request POST   --url http://localhost:3000/auth/login   --header 'Content-Type: application/json'   --data '{
+    "username": "username",
+    "password": "password"
+  }'
 ```
-curl --request DELETE \
-  --url http://localhost:3000/task/uuid-here \
-  --header 'Authorization: Bearer token'
-```
+
+#### **Tasks**
+
+- **Create a Task:**
+   ```bash
+   curl --request POST      --url http://localhost:3000/task      --header 'Authorization: Bearer token'      --header 'Content-Type: application/json'      --data '{
+       "title": "title",
+       "description": "description",
+       "expirationDate": "2024-01-01"
+     }'
+   ```
+
+- **Update a Task:**
+   ```bash
+   curl --request PUT      --url http://localhost:3000/task      --header 'Authorization: Bearer token'      --header 'Content-Type: application/json'      --data '{
+       "id": "uuid here",
+       "title": "updated title",
+       "description": "updated description",
+       "status": "IN_PROGRESS",
+       "expirationDate": "2024-01-04"
+     }'
+   ```
+
+- **Find Task by ID:**
+   ```bash
+   curl --request GET      --url http://localhost:3000/task/1      --header 'Authorization: Bearer token'
+   ```
+
+- **Search Tasks with Filters:**
+   ```bash
+   curl --request GET      --url 'http://localhost:3000/task?title=task%203&status=IN_PROGRESS'      --header 'Authorization: Bearer token'
+   ```
+
+- **Delete a Task:**
+   ```bash
+   curl --request DELETE      --url http://localhost:3000/task/uuid-here      --header 'Authorization: Bearer token'
+   ```
+
+---
+
+## **License**
+This project is licensed under the MIT License. Feel free to use and modify it for your purposes!
+
+---
+
+## **Screenshots**
+(Add relevant screenshots here if available to showcase API functionality or example results.)
+
+---
+
+Happy coding! 💻✨
