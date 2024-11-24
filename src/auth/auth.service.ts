@@ -9,7 +9,7 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class AuthService {
   private jwtTimeExpiration: number = this.configService.get<number>(
-    'JSW_EXPIRATION_TIME',
+    'JWT_EXPIRATION_TIME',
   );
   constructor(
     private readonly userService: UserService,
