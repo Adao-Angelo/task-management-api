@@ -22,22 +22,15 @@ This project demonstrates the following functionalities:
 
 ## **Technologies Used**
 
-| Technology         | Description                                          | Icon |
-|--------------------|------------------------------------------------------|------|
-| **NestJS**         | Framework for building efficient, reliable, and scalable server-side applications. | ![NestJS](https://img.shields.io/badge/-Nest.Js-05122A?style=flat&logo=nestjs)
- |
-| **TypeScript**     | Typed superset of JavaScript that compiles to plain JavaScript. | ![TypeScript](https://img.shields.io/badge/-Typescript-05122A?style=flat&logo=typescript)
- |
-| **TypeORM**        | ORM for TypeScript and JavaScript (ES7, ES6, ES5).  | ![TypeORM](https://img.shields.io/badge/-TypeORM-05122A?style=flat&logo=typeorm)
- |
-| **Docker**         | Containerization platform for seamless deployment.   | ![Docker](https://img.shields.io/badge/-Docker-05122A?style=flat&logo=docker)
- |
-| **JWT**            | Standard for creating access tokens.                 | ![JWT](https://img.shields.io/badge/-JWT-05122A?style=flat&logo=jsonwebtokens)
- |
-| **PostgreSQL**     | Robust and scalable relational database.             | ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-05122A?style=flat&logo=postgresql)
- |
+| Technology      | Description                                                  | Icon                                                                                      |
+|------------------|--------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| **NestJS**      | Framework for building efficient, reliable, and scalable server-side applications. | ![NestJS](https://img.shields.io/badge/-Nest.Js-05122A?style=flat&logo=nestjs)           |
+| **TypeScript**  | Typed superset of JavaScript that compiles to plain JavaScript. | ![TypeScript](https://img.shields.io/badge/-Typescript-05122A?style=flat&logo=typescript)|
+| **TypeORM**     | ORM for TypeScript and JavaScript (ES7, ES6, ES5).            | ![TypeORM](https://img.shields.io/badge/-TypeORM-05122A?style=flat&logo=typeorm)         |
+| **Docker**      | Containerization platform for seamless deployment.           | ![Docker](https://img.shields.io/badge/-Docker-05122A?style=flat&logo=docker)            |
+| **JWT**         | Standard for creating access tokens.                         | ![JWT](https://img.shields.io/badge/-JWT-05122A?style=flat&logo=jsonwebtokens)           |
+| **PostgreSQL**  | Robust and scalable relational database.                     | ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-05122A?style=flat&logo=postgresql)|
 
----
 
 ## **Installation**
 
