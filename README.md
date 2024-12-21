@@ -23,12 +23,18 @@ This project demonstrates the following functionalities:
 
 | Technology         | Description                                          | Icon |
 |--------------------|------------------------------------------------------|------|
-| **NestJS**         | Framework for building efficient, reliable, and scalable server-side applications. | ![NestJS](https://nestjs.com/img/logo_text.svg) |
-| **TypeScript**     | Typed superset of JavaScript that compiles to plain JavaScript. | ![TypeScript](https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.svg) |
-| **TypeORM**        | ORM for TypeScript and JavaScript (ES7, ES6, ES5).  | ![TypeORM](https://typeorm.io/img/logo.svg) |
-| **Docker**         | Containerization platform for seamless deployment.   | ![Docker](https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png) |
-| **JWT**            | Standard for creating access tokens.                 | 🔐 |
-| **PostgreSQL**     | Robust and scalable relational database.             | ![PostgreSQL](https://www.postgresql.org/media/img/about/press/elephant.png) |
+| **NestJS**         | Framework for building efficient, reliable, and scalable server-side applications. | ![NestJS](https://img.shields.io/badge/-Nest.Js-05122A?style=flat&logo=nestjs)
+ |
+| **TypeScript**     | Typed superset of JavaScript that compiles to plain JavaScript. | ![TypeScript](https://img.shields.io/badge/-Typescript-05122A?style=flat&logo=typescript)
+ |
+| **TypeORM**        | ORM for TypeScript and JavaScript (ES7, ES6, ES5).  | ![TypeORM](https://img.shields.io/badge/-TypeORM-05122A?style=flat&logo=typeorm)
+ |
+| **Docker**         | Containerization platform for seamless deployment.   | ![Docker](https://img.shields.io/badge/-Docker-05122A?style=flat&logo=docker)
+ |
+| **JWT**            | Standard for creating access tokens.                 | ![JWT](https://img.shields.io/badge/-JWT-05122A?style=flat&logo=jsonwebtokens)
+ |
+| **PostgreSQL**     | Robust and scalable relational database.             | ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-05122A?style=flat&logo=postgresql)
+ |
 
 ---
 
